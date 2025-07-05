@@ -3,7 +3,6 @@ import { useInView } from "react-intersection-observer";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -57,100 +56,59 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      // Use Formspree for direct form submission
+      // TODO: Replace with your own Formspree form ID from https://formspree.io
+      const formspreeEndpoint = "https://formspree.io/f/mgveqebr"; // Temporary demo form - replace with yours!
+      
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `Portfolio Contact: ${formData.subject}`,
+        }),
+      });
 
-      // Check if EmailJS is configured
-      if (!serviceId || !templateId || !publicKey) {
-        console.log("EmailJS not configured for production. Using fallback method.");
-        
-        // Fallback: Open email client with pre-filled information
-        const subject = encodeURIComponent(formData.subject);
-        const body = encodeURIComponent(
-          `Name: ${formData.name}\n` +
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your message! I will get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      // Fallback: Open email client with pre-filled information
+      console.log("Using fallback email method.");
+      
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
           `Email: ${formData.email}\n\n` +
           `Message:\n${formData.message}`
-        );
-        
-        const mailtoLink = `mailto:kasuniabeynayake01@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Open email client
-        window.open(mailtoLink, '_blank');
-        
-        toast({
-          title: "Email Client Opened",
-          description: "Please send the email from your email client to complete the message.",
-        });
-        
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        return;
-      }
-
-      // Initialize EmailJS
-      try {
-        emailjs.init(publicKey);
-        console.log("EmailJS initialized successfully");
-      } catch (initError) {
-        console.error("EmailJS initialization error:", initError);
-        throw new Error(
-          "Failed to initialize EmailJS. Please check your public key."
-        );
-      }
-
-      // Template parameters
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: "Kasuni Abeynayake",
-      };
-
-      // Send email
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams
       );
 
-      console.log("EmailJS Response:", response);
+      const mailtoLink = `mailto:kasuniabeynayake01@gmail.com?subject=${subject}&body=${body}`;
+
+      // Open email client
+      window.open(mailtoLink, "_blank");
 
       toast({
-        title: "Success",
-        description: "Thank you for your message! I will get back to you soon.",
+        title: "Email Client Opened",
+        description:
+          "Direct submission failed. Please send the email from your email client.",
       });
+
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS Error Details:", error);
-
-      let errorMessage = "Failed to send message. Please try again later.";
-
-      if (error instanceof Error) {
-        // Check for specific EmailJS errors
-        if (error.message.includes("template")) {
-          errorMessage =
-            "Email template configuration error. Please check your EmailJS template.";
-        } else if (error.message.includes("service")) {
-          errorMessage =
-            "Email service configuration error. Please check your EmailJS service.";
-        } else if (
-          error.message.includes("public_key") ||
-          error.message.includes("user_id")
-        ) {
-          errorMessage =
-            "Email authentication error. Please check your EmailJS public key.";
-        } else if (error.message.includes("rate limit")) {
-          errorMessage = "Rate limit exceeded. Please try again later.";
-        }
-      }
-
-      toast({
-        title: "Error",
-        description: errorMessage,
-        variant: "destructive",
-      });
     } finally {
       setIsSubmitting(false);
     }
@@ -194,7 +152,7 @@ const Contact = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            The form below will open your email client to send a message.
+            Send me a message directly through the form below.
           </motion.p>
         </div>
 
