@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ## 🚀 Live Demo
 
-Visit the live website: [https://yourusername.github.io/KasuniPortfolio/](https://yourusername.github.io/KasuniPortfolio/)
+Visit the live website: [https://KasuniGA.github.io/My_Portfolio/](https://KasuniGA.github.io/My_Portfolio/)
 
 ## 🛠️ Tech Stack
 
@@ -17,12 +17,14 @@ Visit the live website: [https://yourusername.github.io/KasuniPortfolio/](https:
 ## 📦 Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/KasuniPortfolio.git
-   cd KasuniPortfolio
+   git clone https://github.com/KasuniGA/My_Portfolio.git
+   cd My_Portfolio
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -55,14 +57,15 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
    - Navigate to the "Pages" section
    - Under "Source", select "GitHub Actions"
 4. **Configure the base URL** (if needed):
-   - Update the repository name in `vite.config.ts` if your repo name is different from "KasuniPortfolio"
+   - Update the repository name in `vite.config.ts` if your repo name is different from "My_Portfolio"
 
 ### Automatic Deployment:
 
 The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically:
+
 - Build the project when you push to the main branch
 - Deploy the built files to GitHub Pages
-- Make your site available at `https://yourusername.github.io/KasuniPortfolio/`
+- Make your site available at `https://KasuniGA.github.io/My_Portfolio/`
 
 ## 📝 Project Structure
 

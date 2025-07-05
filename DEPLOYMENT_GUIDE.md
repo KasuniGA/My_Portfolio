@@ -7,7 +7,7 @@
 1. **Create a new repository on GitHub**:
    - Go to [GitHub](https://github.com) and sign in
    - Click the "+" icon → "New repository"
-   - Name it `KasuniPortfolio` (or your preferred name)
+   - Name it `My_Portfolio` (or your preferred name)
    - Make it public (GitHub Pages requires public repos for free accounts)
    - Don't initialize with README (we already have one)
 
@@ -26,7 +26,7 @@ git add .
 git commit -m "Initial commit: Portfolio website"
 
 # Add your GitHub repository as remote origin
-git remote add origin https://github.com/YOUR_USERNAME/KasuniPortfolio.git
+git remote add origin https://github.com/KasuniGA/My_Portfolio.git
 
 # Push to GitHub
 git push -u origin main
@@ -48,14 +48,15 @@ git push -u origin main
 Before deployment, update the base URL in your `vite.config.ts`:
 
 ```typescript
-base: process.env.NODE_ENV === 'production' ? '/YOUR_REPO_NAME/' : '/',
+base: process.env.NODE_ENV === 'production' ? '/My_Portfolio/' : '/',
 ```
 
-Replace `YOUR_REPO_NAME` with your actual repository name.
+This has already been configured for your repository `My_Portfolio`.
 
 ### 5. Deploy
 
 Once you push your code, GitHub Actions will automatically:
+
 - Install dependencies
 - Build your project
 - Deploy to GitHub Pages
@@ -65,8 +66,9 @@ You can monitor the deployment progress in the "Actions" tab of your repository.
 ### 6. Access Your Website
 
 After successful deployment, your portfolio will be available at:
+
 ```
-https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+https://KasuniGA.github.io/My_Portfolio/
 ```
 
 ## 🔧 Troubleshooting
@@ -117,6 +119,7 @@ https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
 ## 🆘 Need Help?
 
 If you encounter issues:
+
 1. Check the GitHub Actions logs
 2. Verify your repository settings
 3. Ensure all file paths are correct
