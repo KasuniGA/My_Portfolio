@@ -57,35 +57,6 @@ const About = () => {
                 growing, and making a positive impact through innovative
                 solutions.
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">
-                    Education
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Plymouth University
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    BSc Computer Science
-                  </p>
-                  <p className="text-sm text-muted-foreground">2022-2025</p>
-                </div>
-                <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">
-                    Focus Areas
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Web Development
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    AI/Machine Learning
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Database Systems
-                  </p>
-                </div>
-              </div>
             </div>
           </motion.div>
 
