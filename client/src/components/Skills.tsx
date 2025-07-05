@@ -70,17 +70,35 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div 
               key={skill.name}
-              className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer group"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">{skill.icon}</span>
-                  <h3 className="font-semibold text-foreground">{skill.name}</h3>
+                  <motion.span 
+                    className="text-2xl"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {skill.icon}
+                  </motion.span>
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{skill.name}</h3>
                 </div>
-                <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                <motion.span 
+                  className="text-sm text-muted-foreground group-hover:text-primary font-semibold transition-colors"
+                  initial={{ opacity: 0 }}
+                  animate={animatedSkills.includes(index) ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ delay: index * 0.1 + 0.5 }}
+                >
+                  {skill.level}%
+                </motion.span>
               </div>
               <div className="skill-progress">
                 <div 

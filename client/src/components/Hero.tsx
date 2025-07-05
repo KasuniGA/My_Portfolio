@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import FloatingParticles from './FloatingParticles';
 
 const Hero = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
@@ -32,14 +33,26 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <motion.section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10 dark:opacity-5">
+      <motion.div 
+        className="absolute inset-0 opacity-10 dark:opacity-5"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-600/20" />
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='10' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
-      </div>
+        <FloatingParticles />
+      </motion.div>
       
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -104,7 +117,7 @@ const Hero = () => {
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
         </div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
 

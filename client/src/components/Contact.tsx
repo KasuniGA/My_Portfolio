@@ -154,19 +154,24 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Name</label>
-                <input 
+                <motion.input 
                   type="text" 
                   id="name" 
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 hover:border-primary/50"
                   placeholder="Your Name"
                   required
+                  whileFocus={{ scale: 1.02 }}
                 />
-              </div>
+              </motion.div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">Email</label>
                 <input 
