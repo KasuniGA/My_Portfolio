@@ -36,7 +36,10 @@ function App() {
           <div className="min-h-screen bg-background text-foreground">
             <AnimatePresence mode="wait">
               {isLoading ? (
-                <LoadingScreen key="loading" onComplete={() => setIsLoading(false)} />
+                <LoadingScreen
+                  key="loading"
+                  onComplete={() => setIsLoading(false)}
+                />
               ) : (
                 <div key="app">
                   <CursorEffect />

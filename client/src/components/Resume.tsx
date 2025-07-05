@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Download, FileText } from 'lucide-react';
+import { getAssetPath } from '@/lib/assetPaths';
 
 const Resume = () => {
   const [ref, inView] = useInView({
@@ -11,7 +12,7 @@ const Resume = () => {
   const handleDownload = () => {
     // Create a temporary link to download the PDF
     const link = document.createElement('a');
-    link.href = '/api/download-resume';
+    link.href = getAssetPath('Kasuni_Abeynayake_Resume.pdf');
     link.download = 'Kasuni_Abeynayake_Resume.pdf';
     document.body.appendChild(link);
     link.click();
