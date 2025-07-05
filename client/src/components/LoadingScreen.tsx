@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -39,10 +39,10 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         >
           <div className="relative">
             <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <motion.div
-                className="w-12 h-12 bg-primary rounded-full"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              <img
+                src="/public/3.png"
+                alt="Kasuni Abeynayake"
+                className="w-36 h-36 rounded-full object-cover"
               />
             </div>
             <motion.h1
@@ -51,7 +51,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Kasuni
+              Kasuni Abeynayake
             </motion.h1>
             <motion.p
               className="text-lg text-muted-foreground"
