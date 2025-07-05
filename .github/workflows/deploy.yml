@@ -3,12 +3,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout
@@ -28,6 +33,13 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: List build output (debug)
+        run: |
+          echo "Contents of dist/public:"
+          ls -la dist/public/ || echo "dist/public directory not found"
+          echo "Contents of dist:"
+          ls -la dist/ || echo "dist directory not found"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -40,14 +52,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-# Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
