@@ -7,17 +7,20 @@ I've updated your contact form to use **Formspree**, which allows direct form su
 ## 🚀 How to Set Up Formspree (Required)
 
 ### Step 1: Create Formspree Account
+
 1. Go to [formspree.io](https://formspree.io/)
 2. Sign up for a free account
 3. Verify your email address
 
 ### Step 2: Create a New Form
+
 1. Click "New Form" in your Formspree dashboard
 2. **Form Name**: Portfolio Contact Form
 3. **Email**: kasuniabeynayake01@gmail.com (your email)
 4. Click "Create Form"
 
 ### Step 3: Get Your Form Endpoint
+
 1. After creating the form, you'll see a form endpoint like:
    ```
    https://formspree.io/f/YOUR_FORM_ID
@@ -25,6 +28,7 @@ I've updated your contact form to use **Formspree**, which allows direct form su
 2. Copy this endpoint
 
 ### Step 4: Update the Contact Component
+
 1. Open `client/src/components/Contact.tsx`
 2. Find this line:
    ```typescript
@@ -33,7 +37,9 @@ I've updated your contact form to use **Formspree**, which allows direct form su
 3. Replace `xdkoqokp` with your actual Formspree form ID
 
 ### Step 5: Configure Form Settings (Optional)
+
 In your Formspree dashboard, you can:
+
 - Set up custom reply messages
 - Add spam protection
 - Configure email notifications
@@ -68,12 +74,14 @@ For higher volume, Formspree has paid plans starting at $10/month.
 ## 🛡️ Fallback Method
 
 The form includes a fallback mechanism:
+
 - If Formspree fails, it automatically opens the user's email client
 - This ensures messages can always be sent
 
 ## 📝 Testing
 
 After setup:
+
 1. Deploy your changes to GitHub Pages
 2. Fill out the contact form on your website
 3. Check your email for the message
@@ -89,6 +97,7 @@ After setup:
 ## 🎉 Once Set Up
 
 Your contact form will:
+
 - Send emails directly to your inbox
 - Show professional success/error messages
 - Work reliably for all visitors

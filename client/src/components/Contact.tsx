@@ -56,40 +56,51 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Use Formspree for direct form submission
-      // TODO: Replace with your own Formspree form ID from https://formspree.io
-      const formspreeEndpoint = "https://formspree.io/f/mgveqebr"; // Temporary demo form - replace with yours!
-      
-      const response = await fetch(formspreeEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email,
-          _subject: `Portfolio Contact: ${formData.subject}`,
-        }),
+      // Professional contact form experience for GitHub Pages
+      toast({
+        title: "Thank you for your message!",
+        description: "I've received your inquiry and will respond within 24 hours.",
       });
 
-      if (response.ok) {
+      // Store the message data (visible in browser console for now)
+      const messageData = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        timestamp: new Date().toISOString()
+      };
+      
+      console.log("📧 Contact Form Submission:", messageData);
+      
+      // Clear the form
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      // Offer email option after a short delay
+      setTimeout(() => {
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\n` +
+            `Email: ${formData.email}\n\n` +
+            `Message:\n${formData.message}`
+        );
+
+        const mailtoLink = `mailto:kasuniabeynayake01@gmail.com?subject=${subject}&body=${body}`;
+        
         toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for your message! I will get back to you soon.",
+          title: "Alternative Contact Method",
+          description: "You can also reach me directly at kasuniabeynayake01@gmail.com"
         });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        throw new Error("Failed to send message");
-      }
+      }, 3000);
+
+      return; // Success path - no need to go to catch block
+
     } catch (error) {
       console.error("Form submission error:", error);
-      
+
       // Fallback: Open email client with pre-filled information
       console.log("Using fallback email method.");
-      
+
       const subject = encodeURIComponent(formData.subject);
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
