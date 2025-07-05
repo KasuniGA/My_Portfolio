@@ -62,15 +62,30 @@ const Contact = () => {
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+      // Check if EmailJS is configured
       if (!serviceId || !templateId || !publicKey) {
-        console.error("Missing environment variables:", {
-          serviceId: !!serviceId,
-          templateId: !!templateId,
-          publicKey: !!publicKey,
-        });
-        throw new Error(
-          "EmailJS configuration is missing. Please restart the development server after setting up your .env file."
+        console.log("EmailJS not configured for production. Using fallback method.");
+        
+        // Fallback: Open email client with pre-filled information
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\n` +
+          `Email: ${formData.email}\n\n` +
+          `Message:\n${formData.message}`
         );
+        
+        const mailtoLink = `mailto:kasuniabeynayake01@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open email client
+        window.open(mailtoLink, '_blank');
+        
+        toast({
+          title: "Email Client Opened",
+          description: "Please send the email from your email client to complete the message.",
+        });
+        
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        return;
       }
 
       // Initialize EmailJS
@@ -172,6 +187,14 @@ const Contact = () => {
           >
             I'm always interested in discussing new opportunities,
             collaborations, or innovative projects. Let's connect!
+          </motion.p>
+          <motion.p
+            className="text-sm text-muted-foreground max-w-2xl mx-auto mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            The form below will open your email client to send a message.
           </motion.p>
         </div>
 
@@ -325,7 +348,7 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    Sending...
+                    Processing...
                   </>
                 ) : (
                   <>

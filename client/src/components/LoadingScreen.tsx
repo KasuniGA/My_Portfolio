@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { getAssetPath } from '@/lib/assetPaths';
+import { getAssetPath } from "@/lib/assetPaths";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -41,7 +41,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           <div className="relative">
             <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <img
-                src={getAssetPath('3.png')}
+                src={getAssetPath("3.png")}
                 alt="Kasuni Abeynayake"
                 className="w-36 h-36 rounded-full object-cover"
               />

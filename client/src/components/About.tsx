@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { getAssetPath } from '@/lib/assetPaths';
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { getAssetPath } from "@/lib/assetPaths";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -70,7 +70,7 @@ const About = () => {
             <div className="relative">
               <div className="w-96 h-96 rounded-full overflow-hidden shadow-xl bg-gradient-to-br from-primary/20 to-blue-600/20 flex items-center justify-center">
                 <img
-                  src={getAssetPath('profile.jpg')}
+                  src={getAssetPath("profile.jpg")}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />

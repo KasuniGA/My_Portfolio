@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Github, Star } from "lucide-react";
-import { getAssetPath } from '@/lib/assetPaths';
+import { getAssetPath } from "@/lib/assetPaths";
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -25,7 +25,7 @@ const Projects = () => {
       type: "Individual Project",
       highlight: "AI-Powered Species Recognition",
       gradient: "from-emerald-400 to-blue-500",
-      image: getAssetPath('images/projects/enfauna.jpg'),
+      image: getAssetPath("images/projects/enfauna.jpg"),
       githubLink: "https://github.com/KasuniGA/EnFauna--WebApp.git",
     },
     {
@@ -36,7 +36,7 @@ const Projects = () => {
       type: "Group Project",
       highlight: "Secure Patient Management",
       gradient: "from-blue-400 to-indigo-500",
-      image: getAssetPath('images/projects/medsync.png'),
+      image: getAssetPath("images/projects/medsync.png"),
       githubLink: "https://github.com/KasuniGA/MedSync.git",
     },
     {
@@ -47,7 +47,7 @@ const Projects = () => {
       type: "Group Project",
       highlight: "Real-time Seat Selection",
       gradient: "from-purple-400 to-pink-500",
-      image: getAssetPath('images/projects/flixora.jpeg'),
+      image: getAssetPath("images/projects/flixora.jpeg"),
       githubLink:
         "https://github.com/Plymouth-University/coursework-group_65.git",
     },
@@ -59,7 +59,7 @@ const Projects = () => {
       type: "Group Project",
       highlight: "3D Room Designer",
       gradient: "from-teal-400 to-blue-500",
-      image: getAssetPath('images/projects/vistaroom.jpg'),
+      image: getAssetPath("images/projects/vistaroom.jpg"),
       githubLink: "https://github.com/KaviruDeSilva08/Group_53_Vista_Room.git",
     },
     {
@@ -70,7 +70,7 @@ const Projects = () => {
       type: "Group Project",
       highlight: "Student Accommodation Platform",
       gradient: "from-green-400 to-teal-500",
-      image: getAssetPath('images/projects/greenstay.jpg'),
+      image: getAssetPath("images/projects/greenstay.jpg"),
       githubLink: "https://github.com/username/greenstay",
     },
     {
@@ -81,7 +81,7 @@ const Projects = () => {
       type: "Group Project",
       highlight: "Social Media Platform",
       gradient: "from-indigo-400 to-fuchsia-500",
-      image: getAssetPath('images/projects/ready-steady-go.jpg'),
+      image: getAssetPath("images/projects/ready-steady-go.jpg"),
       githubLink: "https://github.com/KasuniGA/ready-steady-go.git",
     },
     {
@@ -92,7 +92,7 @@ const Projects = () => {
       type: "Group Project",
       highlight: "Mobile Transport Solution",
       gradient: "from-green-400 to-lime-500",
-      image: getAssetPath('images/projects/green-ride.jpg'),
+      image: getAssetPath("images/projects/green-ride.jpg"),
       githubLink: "https://github.com/KasuniGA/Git-GreenRide.git",
     },
   ];

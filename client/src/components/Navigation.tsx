@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { motion } from "framer-motion";
-import { getAssetPath } from '@/lib/assetPaths';
+import { getAssetPath } from "@/lib/assetPaths";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +47,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <img
-              src={getAssetPath('2.png')}
+              src={getAssetPath("2.png")}
               alt="Kasuni Abeynayake"
               className="h-36 w-auto"
             />
