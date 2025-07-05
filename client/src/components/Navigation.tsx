@@ -46,7 +46,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <img
-              src="/public/2.png"
+              src="./2.png"
               alt="Kasuni Abeynayake"
               className="h-36 w-auto"
             />
