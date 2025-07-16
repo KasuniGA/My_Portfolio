@@ -59,7 +59,8 @@ const Contact = () => {
       // Professional contact form experience for GitHub Pages
       toast({
         title: "Thank you for your message!",
-        description: "I've received your inquiry and will respond within 24 hours.",
+        description:
+          "I've received your inquiry and will respond within 24 hours.",
       });
 
       // Store the message data (visible in browser console for now)
@@ -68,11 +69,11 @@ const Contact = () => {
         email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
-      
+
       console.log("📧 Contact Form Submission:", messageData);
-      
+
       // Clear the form
       setFormData({ name: "", email: "", subject: "", message: "" });
 
@@ -86,15 +87,15 @@ const Contact = () => {
         );
 
         const mailtoLink = `mailto:kasuniabeynayake01@gmail.com?subject=${subject}&body=${body}`;
-        
+
         toast({
           title: "Alternative Contact Method",
-          description: "You can also reach me directly at kasuniabeynayake01@gmail.com"
+          description:
+            "You can also reach me directly at kasuniabeynayake01@gmail.com",
         });
       }, 3000);
 
       return; // Success path - no need to go to catch block
-
     } catch (error) {
       console.error("Form submission error:", error);
 

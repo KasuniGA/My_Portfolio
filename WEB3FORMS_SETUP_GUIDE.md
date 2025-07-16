@@ -7,12 +7,14 @@ I've updated your contact form to use **Web3Forms**, which is more reliable than
 ## 🚀 Quick Setup (Free & Easy)
 
 ### Step 1: Get Your Access Key
+
 1. Go to [web3forms.com](https://web3forms.com/)
 2. Enter your email: `kasuniabeynayake01@gmail.com`
 3. Click "Create Access Key"
 4. Copy the access key they send to your email
 
 ### Step 2: Update the Contact Component
+
 1. Open `client/src/components/Contact.tsx`
 2. Find this line:
    ```typescript
@@ -21,6 +23,7 @@ I've updated your contact form to use **Web3Forms**, which is more reliable than
 3. Replace the demo key with your actual access key
 
 ### Step 3: Test the Form
+
 1. Deploy your changes
 2. Fill out the contact form
 3. Check your email for the message
@@ -46,13 +49,13 @@ I've updated your contact form to use **Web3Forms**, which is more reliable than
 
 ## 🆚 Why Web3Forms vs Others?
 
-| Feature | Web3Forms | Formspree | EmailJS |
-|---------|-----------|-----------|---------|
-| Free tier | Unlimited | 50/month | 200/month |
-| Setup complexity | Very easy | Easy | Complex |
-| Registration required | No | Yes | Yes |
-| Reliability | High | High | Medium |
-| GitHub Pages friendly | Yes | Yes | Requires env vars |
+| Feature               | Web3Forms | Formspree | EmailJS           |
+| --------------------- | --------- | --------- | ----------------- |
+| Free tier             | Unlimited | 50/month  | 200/month         |
+| Setup complexity      | Very easy | Easy      | Complex           |
+| Registration required | No        | Yes       | Yes               |
+| Reliability           | High      | High      | Medium            |
+| GitHub Pages friendly | Yes       | Yes       | Requires env vars |
 
 ## 🔧 Current Status
 
@@ -65,6 +68,7 @@ The form is already configured with a demo access key that will work temporarily
 ## 📧 Email Format
 
 You'll receive emails like this:
+
 ```
 From: John Doe (john@example.com)
 
@@ -77,6 +81,7 @@ Hello! I'd like to discuss a potential project...
 ## 🛡️ Fallback Method
 
 The form still includes the email client fallback:
+
 - If Web3Forms fails for any reason
 - It automatically opens the user's email client
 - Ensures messages can always be sent
@@ -84,6 +89,7 @@ The form still includes the email client fallback:
 ## 🎉 Once Set Up
 
 Your contact form will:
+
 - ✅ Send emails directly to your inbox
 - ✅ Work reliably for all visitors
 - ✅ Show professional success messages
