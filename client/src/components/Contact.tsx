@@ -80,7 +80,8 @@ const Contact = () => {
 
       toast({
         title: "Message Sent Successfully!",
-        description: "Thank you for your message! I will get back to you within 24 hours.",
+        description:
+          "Thank you for your message! I will get back to you within 24 hours.",
       });
 
       // Clear the form
