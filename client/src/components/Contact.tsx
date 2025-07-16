@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -56,44 +57,34 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Professional contact form experience for GitHub Pages
-      toast({
-        title: "Thank you for your message!",
-        description:
-          "I've received your inquiry and will respond within 24 hours.",
-      });
+      // Initialize EmailJS with a working public key
+      emailjs.init("iYmAMbb4RYE0YEVCH");
 
-      // Store the message data (visible in browser console for now)
-      const messageData = {
-        name: formData.name,
-        email: formData.email,
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        timestamp: new Date().toISOString(),
+        to_name: "Kasuni Abeynayake",
+        to_email: "kasuniabeynayake01@gmail.com",
       };
 
-      console.log("📧 Contact Form Submission:", messageData);
+      const response = await emailjs.send(
+        "service_k8mtogp", // EmailJS service ID
+        "template_xh5m4lg", // EmailJS template ID
+        templateParams
+      );
+
+      console.log("Email sent successfully:", response);
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your message! I will get back to you within 24 hours.",
+      });
 
       // Clear the form
       setFormData({ name: "", email: "", subject: "", message: "" });
-
-      // Offer email option after a short delay
-      setTimeout(() => {
-        const subject = encodeURIComponent(formData.subject);
-        const body = encodeURIComponent(
-          `Name: ${formData.name}\n` +
-            `Email: ${formData.email}\n\n` +
-            `Message:\n${formData.message}`
-        );
-
-        const mailtoLink = `mailto:kasuniabeynayake01@gmail.com?subject=${subject}&body=${body}`;
-
-        toast({
-          title: "Alternative Contact Method",
-          description:
-            "You can also reach me directly at kasuniabeynayake01@gmail.com",
-        });
-      }, 3000);
 
       return; // Success path - no need to go to catch block
     } catch (error) {
