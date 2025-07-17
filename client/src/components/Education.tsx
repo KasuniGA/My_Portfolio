@@ -85,7 +85,7 @@ const Education = () => {
     <section
       ref={sectionRef}
       id="education"
-      className="min-h-screen bg-gradient-to-b from-indigo-50 via-blue-50 to-sky-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 px-4 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-b from-teal-50 via-cyan-50 to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 px-4 relative overflow-hidden"
     >
       <style>{`
         .animate-slide-in {
@@ -106,8 +106,8 @@ const Education = () => {
         .timeline-line {
           background: linear-gradient(to bottom, 
             transparent 0%, 
-            #6366f1 10%, 
-            #6366f1 90%, 
+            #008080 10%, 
+            #008080 90%, 
             transparent 100%
           );
         }
@@ -115,20 +115,20 @@ const Education = () => {
         .glass-card {
           background: rgba(255, 255, 255, 0.8);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(99, 102, 241, 0.3);
+          border: 1px solid rgba(0, 128, 128, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .dark .glass-card {
           background: rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(99, 102, 241, 0.2);
+          border: 1px solid rgba(0, 128, 128, 0.2);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
         .hover-glow:hover {
-          box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-          border-color: rgba(99, 102, 241, 0.5);
+          box-shadow: 0 0 30px rgba(0, 128, 128, 0.3);
+          border-color: rgba(0, 128, 128, 0.5);
           transform: translateY(-2px);
         }
         
@@ -150,15 +150,15 @@ const Education = () => {
 
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-40 left-20 w-64 h-64 bg-gradient-to-r from-indigo-500/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-80 h-80 bg-gradient-to-l from-indigo-600/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-40 left-20 w-64 h-64 bg-gradient-to-r from-teal-500/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-20 w-80 h-80 bg-gradient-to-l from-teal-600/10 to-transparent rounded-full blur-3xl"></div>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5 dark:opacity-5">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-600/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-emerald-600/10" />
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='10' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23008080' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='10' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }}
           />
         </div>
@@ -174,11 +174,11 @@ const Education = () => {
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
             Educational{" "}
-            <span className="bg-gradient-to-r from-indigo-500 to-indigo-700 dark:from-indigo-400 dark:to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-600 bg-clip-text text-transparent">
               Background
             </span>
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-indigo-700 dark:from-indigo-400 dark:to-indigo-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             A comprehensive overview of my academic achievements and educational
             milestones
@@ -198,7 +198,7 @@ const Education = () => {
                 className={`timeline-item relative flex flex-col md:flex-row items-start md:items-center opacity-0`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-6 md:left-1/2 w-6 h-6 bg-gradient-to-r from-indigo-500 to-indigo-700 dark:from-indigo-400 dark:to-indigo-600 rounded-full transform md:-translate-x-3 border-4 border-white dark:border-gray-900 shadow-lg z-10 pulse-dot"></div>
+                <div className="absolute left-6 md:left-1/2 w-6 h-6 bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-600 rounded-full transform md:-translate-x-3 border-4 border-white dark:border-gray-900 shadow-lg z-10 pulse-dot"></div>
 
                 {/* Year Badge */}
                 <div
@@ -211,8 +211,8 @@ const Education = () => {
                   <div className="ml-20 md:ml-0 inline-block">
                     <div className="glass-card rounded-2xl p-4 hover-glow transition-all duration-300">
                       <div className="flex items-center gap-3 mb-2">
-                        <Calendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                        <span className="bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-400 dark:to-indigo-600 bg-clip-text text-transparent font-black text-lg">
+                        <Calendar className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                        <span className="bg-gradient-to-r from-teal-600 to-teal-800 dark:from-teal-400 dark:to-teal-600 bg-clip-text text-transparent font-black text-lg">
                           {item.year}
                         </span>
                       </div>
@@ -221,12 +221,12 @@ const Education = () => {
                           className={`px-3 py-1 rounded-full text-xs font-semibold ${
                             item.status === "Current"
                               ? "bg-green-100 text-green-700 border border-green-300 dark:bg-green-500/20 dark:text-green-400 dark:border-green-500/30"
-                              : "bg-blue-100 text-blue-700 border border-blue-300 dark:bg-blue-500/20 dark:text-blue-400 dark:border-blue-500/30"
+                              : "bg-teal-100 text-teal-700 border border-teal-300 dark:bg-teal-500/20 dark:text-teal-400 dark:border-teal-500/30"
                           }`}
                         >
                           {item.status}
                         </span>
-                        <span className="px-3 py-1 bg-indigo-100 text-indigo-700 border border-indigo-300 dark:bg-indigo-500/20 dark:text-indigo-400 dark:border-indigo-500/30 rounded-full text-xs font-semibold">
+                        <span className="px-3 py-1 bg-teal-100 text-teal-700 border border-teal-300 dark:bg-teal-500/20 dark:text-teal-400 dark:border-teal-500/30 rounded-full text-xs font-semibold">
                           {item.type}
                         </span>
                       </div>
@@ -243,11 +243,11 @@ const Education = () => {
                   <div className="ml-20 md:ml-0 glass-card rounded-3xl p-8 hover-glow transition-all duration-300 group">
                     {/* Institution Header */}
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-700 dark:from-indigo-400 dark:to-indigo-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
                         {item.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 leading-tight">
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300 leading-tight">
                           {item.institution}
                         </h3>
                         <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
@@ -266,10 +266,10 @@ const Education = () => {
 
                     {/* Grade (if exists) */}
                     {item.grade && (
-                      <div className="pt-4 border-t border-indigo-200 dark:border-indigo-400/20">
+                      <div className="pt-4 border-t border-teal-200 dark:border-teal-400/20">
                         <div className="flex items-center gap-2">
-                          <Award className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                          <span className="text-indigo-600 dark:text-indigo-400 font-bold">
+                          <Award className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                          <span className="text-teal-600 dark:text-teal-400 font-bold">
                             {item.grade}
                           </span>
                         </div>
@@ -284,7 +284,7 @@ const Education = () => {
 
         {/* Footer Decoration */}
         <div className="mt-20 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-700 dark:from-indigo-400 dark:to-indigo-600 rounded-full shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-600 rounded-full shadow-lg">
             <div className="w-3 h-3 bg-white rounded-full pulse-dot"></div>
           </div>
           <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg">
