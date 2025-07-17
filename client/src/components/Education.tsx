@@ -168,7 +168,7 @@ const Education = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
-            <span className="text-indigo-600 dark:text-indigo-400 text-lg font-semibold tracking-wider uppercase">
+            <span className="text-teal-600 dark:text-teal-400 text-lg font-semibold tracking-wider uppercase">
               My Journey
             </span>
           </div>

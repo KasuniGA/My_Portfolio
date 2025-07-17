@@ -24,7 +24,7 @@ const Projects = () => {
       ],
       type: "Individual Project",
       highlight: "AI-Powered Species Recognition",
-      gradient: "from-emerald-400 to-blue-500",
+      gradient: "from-teal-400 to-emerald-500",
       image: getAssetPath("images/projects/enfauna.jpg"),
       githubLink: "https://github.com/KasuniGA/EnFauna--WebApp.git",
     },
@@ -35,7 +35,7 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "QR Code API"],
       type: "Group Project",
       highlight: "Secure Patient Management",
-      gradient: "from-blue-400 to-indigo-500",
+      gradient: "from-teal-400 to-cyan-500",
       image: getAssetPath("images/projects/medsync.png"),
       githubLink: "https://github.com/KasuniGA/MedSync.git",
     },
@@ -58,7 +58,7 @@ const Projects = () => {
       techStack: ["React", "Node.js", "Express.js", "Firebase", "Three.js"],
       type: "Group Project",
       highlight: "3D Room Designer",
-      gradient: "from-teal-400 to-blue-500",
+      gradient: "from-teal-400 to-cyan-500",
       image: getAssetPath("images/projects/vistaroom.jpg"),
       githubLink: "https://github.com/KaviruDeSilva08/Group_53_Vista_Room.git",
     },
@@ -69,7 +69,7 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "JavaScript", "PHP", "Bootstrap", "MySQL"],
       type: "Group Project",
       highlight: "Student Accommodation Platform",
-      gradient: "from-green-400 to-teal-500",
+      gradient: "from-teal-400 to-emerald-500",
       image: getAssetPath("images/projects/greenstay.jpg"),
       githubLink: "https://github.com/username/greenstay",
     },
@@ -80,7 +80,7 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
       type: "Group Project",
       highlight: "Social Media Platform",
-      gradient: "from-indigo-400 to-fuchsia-500",
+      gradient: "from-teal-400 to-emerald-500",
       image: getAssetPath("images/projects/ready-steady-go.jpg"),
       githubLink: "https://github.com/KasuniGA/ready-steady-go.git",
     },
@@ -91,22 +91,21 @@ const Projects = () => {
       techStack: ["Flutter", "Dart", "Firebase", "Google Maps API", "REST API"],
       type: "Group Project",
       highlight: "Mobile Transport Solution",
-      gradient: "from-green-400 to-lime-500",
+      gradient: "from-teal-400 to-cyan-500",
       image: getAssetPath("images/projects/green-ride.jpg"),
       githubLink: "https://github.com/KasuniGA/Git-GreenRide.git",
     },
   ];
 
   const techStackColors: { [key: string]: string } = {
-    React: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+    React: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     "Node.js":
       "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
     MongoDB:
       "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
     "Express.js":
       "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
-    "AI/ML":
-      "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
+    "AI/ML": "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     "GoogleMap API":
       "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
     Firebase: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
@@ -116,21 +115,20 @@ const Projects = () => {
       "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
     "Tailwind CSS":
       "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
-    Bootstrap:
-      "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
+    Bootstrap: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     HTML: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-    CSS: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+    CSS: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     JavaScript:
       "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
     PHP: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
-    MySQL: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+    MySQL: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     "QR Code API":
       "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
     "REST API":
       "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-    Flutter: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+    Flutter: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     Dart: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-    PayPal: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+    PayPal: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     "Google Maps API":
       "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
   };

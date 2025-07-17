@@ -44,14 +44,14 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-50 via-cyan-50 to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       {/* Animated Background Elements - Symmetrically positioned */}
       <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-xl"
+        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-teal-500/20 to-emerald-500/20 rounded-full blur-xl"
         animate={{
           x: [0, 100, 0],
           y: [0, -50, 0],
@@ -78,7 +78,7 @@ const Hero = () => {
         }}
       />
       <motion.div
-        className="absolute bottom-20 left-10 w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-xl"
+        className="absolute bottom-20 left-10 w-32 h-32 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-full blur-xl"
         animate={{
           x: [0, 80, 0],
           y: [0, -60, 0],
@@ -91,7 +91,7 @@ const Hero = () => {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"
+        className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-teal-500/20 to-emerald-500/20 rounded-full blur-xl"
         animate={{
           x: [0, -80, 0],
           y: [0, -60, 0],
@@ -112,7 +112,7 @@ const Hero = () => {
         animate={{ scale: 1, rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-600/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-emerald-500/20" />
         <div
           className="absolute inset-0"
           style={{
