@@ -91,6 +91,19 @@
     background-color: hsl(var(--background) / 0.8);
     border-bottom: 1px solid hsl(var(--border) / 0.5);
   }
+
+  .typewriter-text {
+    font-family: 'Inter', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* Smooth typewriter animation */
+  .typewriter-container {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Custom animations */

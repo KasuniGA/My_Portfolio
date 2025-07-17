@@ -5,6 +5,8 @@ import FloatingParticles from "./FloatingParticles";
 
 const Hero = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
   const controls = useAnimationControls();
 
   const titles = [
@@ -16,12 +18,36 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitle((prev) => (prev + 1) % titles.length);
-    }, 3000);
+    let timeout: NodeJS.Timeout;
+    const currentText = titles[currentTitle];
+    
+    if (isTyping) {
+      // Typing effect
+      if (displayedText.length < currentText.length) {
+        timeout = setTimeout(() => {
+          setDisplayedText(currentText.slice(0, displayedText.length + 1));
+        }, 100); // Typing speed
+      } else {
+        // Finished typing, wait then start deleting
+        timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000); // Pause at end
+      }
+    } else {
+      // Deleting effect
+      if (displayedText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayedText(displayedText.slice(0, -1));
+        }, 50); // Deleting speed (faster)
+      } else {
+        // Finished deleting, move to next title
+        setCurrentTitle((prev) => (prev + 1) % titles.length);
+        setIsTyping(true);
+      }
+    }
 
-    return () => clearInterval(interval);
-  }, [titles.length]);
+    return () => clearTimeout(timeout);
+  }, [displayedText, isTyping, currentTitle, titles]);
 
   useEffect(() => {
     controls.start({
@@ -234,23 +260,23 @@ const Hero = () => {
             </motion.span>
           </motion.h1>
 
-          {/* Rotating Titles - Centered */}
+          {/* Rotating Titles with Typewriter Effect */}
           <motion.div
             className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-8 h-12 flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
           >
-            <motion.span
-              className="typewriter"
-              key={currentTitle}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              {titles[currentTitle]}
-            </motion.span>
+            <div className="flex items-center">
+              <span className="typewriter-text">
+                {displayedText}
+              </span>
+              <motion.span
+                className="inline-block w-0.5 h-8 bg-primary ml-1"
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </div>
           </motion.div>
 
           {/* Description - Centered and Balanced */}
