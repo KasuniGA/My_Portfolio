@@ -64,7 +64,7 @@ const Hero = () => {
         }}
       />
       <motion.div
-        className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl"
+        className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-full blur-xl"
         animate={{
           x: [0, -100, 0],
           y: [0, -50, 0],

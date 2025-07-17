@@ -46,7 +46,7 @@ const Projects = () => {
       techStack: ["React", "Tailwind CSS", "MongoDB", "Node.js", "PayPal"],
       type: "Group Project",
       highlight: "Real-time Seat Selection",
-      gradient: "from-purple-400 to-pink-500",
+      gradient: "from-teal-400 to-cyan-500",
       image: getAssetPath("images/projects/flixora.jpeg"),
       githubLink:
         "https://github.com/Plymouth-University/coursework-group_65.git",
@@ -106,7 +106,7 @@ const Projects = () => {
     "Express.js":
       "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
     "AI/ML":
-      "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+      "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     "GoogleMap API":
       "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
     Firebase: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
@@ -117,12 +117,12 @@ const Projects = () => {
     "Tailwind CSS":
       "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
     Bootstrap:
-      "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+      "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     HTML: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
     CSS: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
     JavaScript:
       "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-    PHP: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+    PHP: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     MySQL: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
     "QR Code API":
       "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
