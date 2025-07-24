@@ -31,6 +31,7 @@ const Education = () => {
       year: "2022-2025",
       institution: "Plymouth University, affiliated with NSBM Green University",
       degree: "Bachelor of Science with Honours in Computer Science",
+      class: "Class: Second Class Upper Division",
       type: "University",
       status: "Current",
       icon: <GraduationCap className="w-6 h-6" />,
@@ -271,6 +272,16 @@ const Education = () => {
                           <Award className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                           <span className="text-teal-600 dark:text-teal-400 font-bold">
                             {item.grade}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    {item.class && (
+                      <div className="pt-4 border-t border-teal-200 dark:border-teal-400/20">
+                        <div className="flex items-center gap-2">
+                          <GraduationCap className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                          <span className="text-teal-600 dark:text-teal-400 font-bold">
+                            {item.class}
                           </span>
                         </div>
                       </div>
