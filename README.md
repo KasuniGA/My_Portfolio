@@ -1,4 +1,4 @@
-# Kasuni Portfolio
+# Kasuni's Portfolio
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
 
@@ -91,16 +91,3 @@ The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically:
 - **Contact Form**: Functional contact form
 - **Portfolio Showcase**: Project gallery
 - **Resume Section**: Downloadable resume
-
-## 🔧 Customization
-
-To customize this portfolio for your own use:
-
-1. **Update personal information** in the components
-2. **Replace images** in the `client/public/` directory
-3. **Modify the color scheme** in `tailwind.config.ts`
-4. **Update the base URL** in `vite.config.ts` to match your repository name
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
